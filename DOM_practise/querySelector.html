@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  </head>
+  <body>
+      <div id="elem">ДИВ</div><!--getElementById-->
+
+<ul><!--//querySelectorAll-->
+    <li>Sun</li>
+    <li>Venera</li>
+    <li>Mars</li>
+    <li>Earth</li>
+</ul>
+
+<!-- <p>Star :</p>
+<ol>
+    <li>Сириус</li>
+    <li>Ригель</li>
+    <li>Капелла</li>
+</ol> -->
+<!-- Matches -->
+<div class="content-t">
+    <ul class="star-list">
+        <li class="star">Сириус</li>
+        <li class="star">Ригель</li>
+        <li class="stars-white">Капелла</li>
+    </ul>
+</div>
+
+
+<h1>About animal</h1>
+<div class="content-animal">
+    <ul class="animal-list">
+        <li class="animal">Лев</li>
+        <li class="animal">Тигр</li>
+        <li class="fish">Акула</li>
+    </ul>
+</div>
+
+
+<div id = "div_id">
+    <p>Text div_id</p>
+</div>
+
+<script>
+//getElementById по знач id 
+let elem = document.getElementById('elem');
+elem.style.background = 'red';
+
+//querySelectorAll
+let elements = document.querySelectorAll('ul > li:last-child');
+for (let elem of elements) {
+    console.log(elem.innerHTML); //
+}
+
+//querySelectorAll
+//    let lists = document.querySelectorAll("ul>li");
+//       for(let val of lists)
+//        console.log(val);
+
+// QuerySEl позвляет выводить один элемент
+    //    let lists = document.querySelector("ol>li");
+    //     console.log(lists[2]);
+
+ // Matches  позволяет опред подходит ли элемент указ css селектор True/false
+      let list = document.querySelectorAll("ul.star-list > li");
+        for(let item of list) {
+            if(item.matches("li.star"))
+            console.log(item);
+        }
+// elem.closest(css) ищет ближ соотв. Возвращ предка или 0
+let li = document.querySelector("li.animal");// предком явл content-animal 
+console.log(li.closest('.animal-list'));
+console.log(li.closest('.fish'));
+console.log(li.closest('h1')); // null не явл предком
+
+</script>
+  </body>
+  </html>

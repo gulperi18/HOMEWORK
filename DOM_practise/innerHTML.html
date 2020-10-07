@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  </head>
+  <body> <!-- hjn --><h1>esfghj</h1>
+    <div id="comm">dsfsgf</div>
+<script>
+//console.log(document.body.constructor.name ); // узнать назв элемента
+
+//console.log(document.body instanceof HTMLBodyElement ); //true
+//console.log(document.body instanceof HTMLElement ); //true
+//console.log(document.body instanceof Element ); //true
+//console.log(document.body instanceof Text); //false
+
+//console.dir(document.body);// выводит структуру класса
+//console.log(document.body);// видим содержимое элемента
+//console.log(document.body.nodeType); // Старое. узлы элем DOM 
+
+// let comm = document.body.firstChild;
+// console.log(comm.nodeName); // комментарий
+// console.log(document.body.nodeName)
+//tagname - для опрел явл ли элементом 
+
+// let h1 = document.body.firstChild.nextSibling;
+// h1.innerHTML = "cvghjk <u> tfgyh </u>";// change структуру
+
+// OUTER - менять тег
+// let h1 = document.body;
+// h1.outerHTML = "<h2> cvghjk <u> tfgyh </u> из h1 v h2 ";
+// console.dir(h1); // обновить
+
+// nodeValue, data - 1 и тоже. использ data - короче 
+//примен к комент, текстовым элементам
+// let comm = document.body.firstChild;
+// console.log(comm.data);
+// comm.data = "123"; // change коммент 
+
+// textContent использ для тегов эл и содерж чистый тест без тегов
+//console.log(document.body.textContent);// использ для защиты от хакерских атак. Будет вставлять как текст
+
+//let msg = prompt("Ваш комент: ", "");
+//comm.textContent = msg; // выводит текст как есть. даже теги н, <script>,<h1>
+
+// innerHTML вместо  textContent 
+let msg = prompt("Ваш комент: ", "");
+comm.innerHTML = msg;// добавл как script, h1 т.е изменяет содерж сайта довавл введеные в код как тег
+
+//hidden = style : display-none;
+// let comm = document.getElementById("comm");
+// comm.hidden = true;
+// setInterval(() => comm.hidden = ! comm.hidden, 500); // будет показывать 500. потом изчезать
+
+
+
+
+</script>
+  </body>
+  </html>

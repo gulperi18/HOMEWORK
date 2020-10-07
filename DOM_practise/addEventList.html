@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>События</title>
+  <style>
+    input{
+      transition: width 1s;
+      width: 200px;
+    }
+    .expand {
+      width: 400px;
+    }
+  </style>
+  </head>
+  <body>
+    <p>Когда от браузера приходит события</p>
+    <p>Мы мржем вызвать привязаннный к этому событию - функию</p>
+    <p>Такая ф-ия называется - ОБРАБОТЧИК СОБЫТИЙ</p>
+   <p><a id="link" href="#" onclick="ShowMessage(event)">Click</a></p><!--event after add--> 
+    <!-- <p><input type ="button" value="ONCLICK" ></p> -->
+    <p><input type ="button" onclick="this.classList.toggle('expand')" value="ONCLICK 2" ></p>
+   
+<script>
+  // назначение обработчика
+  //let inp = document.querySelector("input");
+  //inp.onclick = ShowMessage; // на ссылку
+  //inp.onclick = null; удаление 
+//  link.onclick = ShowMessage;
+  
+//function ShowMessage() {
+ // alert(this.tagName);// Для ссылки - ОК .link.onclick = ShowMessage - доб. РАботает.
+//}// вызываем эту ф-ию
+
+
+
+//element.addEventListener(event,handler,options) - ПАТТЕРН проектиров "Слушатели"
+// не использ onclick
+// let inp = document.querySelector("input");
+// inp.addEventListener("click", ShowMessage);
+// inp.addEventListener("click", function ShowMessage(event) {
+//    console.log(event.clientX, event.clientY);
+// }); // показывает координаты Х , У
+
+//element.removeEventListener(event,handler,options) - удаление
+//inp.removeEventListener("click", ShowMessage);
+// обработчик function нельзя удалить т.к нет ссылки
+
+
+//transitionend
+// let inp = document.querySelector("input");
+// inp.addEventListener("transitionend", ShowMessage);// after animation show alert
+
+
+//handleEvent
+// let inp = document.querySelector("input");
+// inp.addEventListener("click", {
+//     handleEvent(event) {
+//       console.log("dfgh: " + event.type );
+//     }
+// }); // показывает событие. Какое событие произошло
+
+//Class
+class MyHandler {
+  handleEvent(event) {
+      console.log("dfgh: " + event.type );
+    }
+}
+let inp = document.querySelector("input");
+ inp.addEventListener("click", new  MyHandler () );
+
+//EVENT 
+function ShowMessage(event) {
+   alert(event.currentTarget.tagName);
+}
+
+</script>
+  </body>
+  </html>
