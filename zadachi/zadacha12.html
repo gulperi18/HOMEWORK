@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <style>
+            label{
+                display: block;
+                margin-bottom: 5px;
+            }
+            .show{
+                border: 2px solid black;
+                width: 400px;
+                height: 100px;
+                padding: 5px;
+                margin-top: 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Калькулятор находит площать и периметр прямоугольника</h1>
+        <label for="len">Длина:
+            <input required type="text" id="len">
+        </label>
+        <label for="wid">Ширина:
+            <input required type="text" id="wid">
+        </label>
+        <button id="calcBtn">Результат</button>
+
+        <div class="show">
+            <h2 id="area"></h2>
+            <h2 id="perimeter"></h2>
+            </div>
+        <script>
+            
+            var lenEl=document.querySelector("#len");
+            var widEl=document.querySelector("#wid");
+            
+            var calcBtn=document.querySelector("#calcBtn");
+            
+            var areagEl=document.querySelector("#area");
+            var perimeterEl=document.querySelector("#perimeter");
+            
+            //onClick AddBtn
+            calcBtn.onclick=function(){
+                
+                //area 
+                area=Number(lenEl.value)*Number(widEl.value)
+                
+                //perimeter
+                perimeter=2*(Number(lenEl.value)+Number(widEl.value))
+ 
+                
+                //result
+                areagEl.innerHTML="Площадь прямоугольника : "+area;
+                perimeterEl.innerHTML="Периметр прямоугольника : "+perimeter;
+            }
+            
+            
+        </script>
+    </body>
+</html>

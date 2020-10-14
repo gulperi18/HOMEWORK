@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  </head>
+  <body>
+    <p>Калькулятор находит площать и периметр квадрата</p>
+
+    <form class="calk"  style = "width:300px; border: 2px solid black;
+    padding: 5px;">
+
+     Площадь: <input required type="text" id = "square" onchange="hello(this.value);" > <br><br>
+     <button id ="resSquare" >Результат </button> <br><br><br>              
+
+
+     Периметр: <input required type="text" id = "perimeter" onchange="perim(this.value)" > <br><br>
+     <button id ="resPer" >Результат</button>
+ 
+
+    </form><!--calk-->
+
+<script>
+
+function hello(val) {
+  var a = val;
+  document.getElementById('resSquare').innerHtml = a;
+  var p;
+  p = (a*a); // площадь
+alert(p);
+}
+
+function perim(val) {
+  var b = val;
+  document.getElementById('resPer').innerHtml = b;
+   var s;
+   s = 4 * b; //периметр
+  alert(s);
+}
+
+// var dltreug = alert('fgb')
+// var a = prompt('a = ');
+// var p;
+// p = (a*a); // площадь
+// alert(p);
+
+// var b = prompt('b = ');
+// var s;
+// s = 4 * b; //периметр
+// alert(s);
+
+function perim(val) {
+  var c;
+  var d;
+  document.getElementById('resPer').innerHtml = c, d;
+   var s;
+   s = (2*(b+c));  //периметр
+  alert(s);
+}
+
+
+
+
+</script>
+  </body>
+
+  </html>
