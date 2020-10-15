@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+
+        <div style="border: 2px solid red; width: 200px; height: 300px"> 
+        	<center>Площадь:<br><br>
+             		<div id="ploshad" style="border: 2px solid red; width: 100px; height: 20px; margin: auto">
+
+             			
+             		</div>
+         
+			<center>Периметр:</center>
+                  	
+        	<div type="text" id="perimetr" style="border: 2px solid red; width: 100px; height: 20px; margin: auto"></div>
+            <br><br>
+       		
+       			Длина:<br>
+         	<input type="text" id="dlina"><br><br>
+         	Высота:<br>
+         	<input type="text" id="vysota"><br><br>
+
+         	<input id="resultat" type="submit" value="Результат">
+
+        	</center>
+
+
+		</div>
+		<br><br><br>
+		<div id="rect" onclick="newfunc()" style="width:100px;height:70px;background-color:yellow;">Обработка событий через атрибуты</div>
+		
+   <script>
+		let pl = document.querySelector('#ploshad');
+		let per = document.getElementById("perimetr");
+		let dlin = document.querySelector('#dlina');
+		let vys = document.getElementById("vysota");
+		let res = document.getElementById("resultat");
+
+		function newfunc() {
+			let divka = document.getElementById("rect");
+			divka.innerHTML = "Обработана события через атрибуты";
+		}
+
+		res.addEventListener('click', function() {
+			console.log(dlin.value);
+			
+
+
+			pl.innerHTML =  (dlin.value * vys.value) 
+			per.innerHTML = (dlin.value * 2) + (vys.value * 2)
+		})
+		
+   </script>
+	</body>
+</html>
